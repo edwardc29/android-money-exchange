@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="MoneyExchangeView">
+        <attr name="origin_money_field" format="string" />
+        <attr name="destiny_money_field" format="string" />
+    </declare-styleable>
+</resources>

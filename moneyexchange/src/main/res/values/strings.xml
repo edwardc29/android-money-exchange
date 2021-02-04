@@ -1,0 +1,5 @@
+<resources>
+    <string name="buy_sale">Compra: %1$s | Venta: %2$s</string>
+    <string name="you_send">Tú envias</string>
+    <string name="you_get">Tú recibes</string>
+</resources>

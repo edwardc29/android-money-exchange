@@ -1,2 +1,3 @@
+include ':moneyexchange'
 include ':app'
 rootProject.name = "android-money-exchange"

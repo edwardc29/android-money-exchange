@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:layout_height="wrap_content"
+    tools:layout_width="match_parent"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/exchangeCurrencyConstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@drawable/shape_exchange_currency"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/originCurrencyLinearLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="0.5dp"
+            android:background="@drawable/shape_top_left_input_text"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/guidelineHorizontal"
+            app:layout_constraintEnd_toStartOf="@id/guidelineVertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/originCurrencyTextView"
+                style="@style/field_currency_exchange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/originCurrencyEditText"
+                style="@style/amount_exchange"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_top_left_input_text"
+                android:digits="0123456789."
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:nextFocusDown="@id/destinyCurrencyEditText" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/nameCurrencyOriginTextView"
+            style="@style/currency_exchange"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/shape_top_right_currency"
+            app:layout_constraintBottom_toBottomOf="@id/originCurrencyLinearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guidelineVertical"
+            app:layout_constraintTop_toTopOf="@id/originCurrencyLinearLayout"
+            tools:text="Dólares" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/text"
+            app:layout_constraintBottom_toTopOf="@id/destinyCurrencyLinearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/originCurrencyLinearLayout" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.50" />
+
+        <LinearLayout
+            android:id="@+id/destinyCurrencyLinearLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="0.5dp"
+            android:layout_marginBottom="1dp"
+            android:background="@drawable/shape_bottom_left_input_text"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guidelineVertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guidelineHorizontal">
+
+            <TextView
+                android:id="@+id/destinyCurrencyTextView"
+                style="@style/field_currency_exchange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/destinyCurrencyEditText"
+                style="@style/amount_exchange"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape_bottom_left_input_text"
+                android:digits="0123456789."
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLines="1"
+                app:layout_constraintEnd_toStartOf="@id/nameCurrencyOriginTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/originCurrencyEditText" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/nameCurrencyDestinyTextView"
+            style="@style/currency_exchange"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/shape_bottom_right_currency"
+            app:layout_constraintBottom_toBottomOf="@id/destinyCurrencyLinearLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guidelineVertical"
+            app:layout_constraintTop_toTopOf="@id/destinyCurrencyLinearLayout"
+            tools:text="Soles" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/swapCurrenciesImageView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/shape_circle"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="12dp"
+            app:layout_constraintBottom_toTopOf="@+id/nameCurrencyDestinyTextView"
+            app:layout_constraintEnd_toEndOf="@+id/nameCurrencyOriginTextView"
+            app:layout_constraintTop_toBottomOf="@+id/nameCurrencyOriginTextView"
+            app:srcCompat="@drawable/ic_exchange" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.70" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/buySaleTextView"
+        style="@style/buy_sale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/buy_sale"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/exchangeCurrencyConstraintLayout" />
+
+</merge>
