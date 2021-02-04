@@ -36,7 +36,7 @@ class ListCurrencyActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         listCurrencyViewModel.allCurrencyCountries.observe(this) { currencyCountries ->
-            val adapter = CurrencyAdapter(this, currencyCountries) {
+            val adapter = CurrencyAdapter(currencyCountries) {
                 val intent = Intent()
                 intent.putExtra(Constant.CURRENCY_COUNTRY_KEY, it)
                 setResult(Activity.RESULT_OK, intent)

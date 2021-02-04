@@ -1,14 +1,14 @@
 package com.carrion.edward.androidmoneyexchange.presentation.extension
 
-import android.content.Context
 import com.carrion.edward.androidmoneyexchange.R
+import com.carrion.edward.androidmoneyexchange.presentation.CurrencyEnum
 
-fun Context.flag(code: String): Int {
+fun flag(code: String): Int {
     return when (code) {
-        "PEN" -> R.drawable.ic_flag_peru
-        "USD" -> R.drawable.ic_flag_usa
-        "JPY" -> R.drawable.ic_flag_japan
-        "BOB" -> R.drawable.ic_flag_bolivia
+        CurrencyEnum.PERU.code -> R.drawable.ic_flag_peru
+        CurrencyEnum.USA.code -> R.drawable.ic_flag_usa
+        CurrencyEnum.JAPAN.code -> R.drawable.ic_flag_japan
+        CurrencyEnum.BOLIVIA.code -> R.drawable.ic_flag_bolivia
         else -> R.drawable.ic_flag_peru
     }
 }
